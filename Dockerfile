@@ -12,7 +12,7 @@ ARG SERVERPORT=8080
 ENV SERVERPORT=${SERVERPORT}
 ARG HTTPSSERVERPORT=8443
 ENV HTTPSSERVERPORT=${HTTPSSERVERPORT}
-ARG AJPSERVERPORT=8081
+ARG AJPSERVERPORT=9080
 ENV AJPSERVERPORT=${AJPSERVERPORT}
 
 ENV REFRESHED_AT 2019-03-04
@@ -32,8 +32,9 @@ echo "portChoice=default">>response.varfile && \
 ./$JIRAVERSION -q -varfile response.varfile && \
 ln -n /usr/share/java/mysql-connector-java.jar $INSTALLDIR/lib/mysql-connector-java.jar
 
+COPY files/server.xml $INSTALLDIR/conf/server.xml
 
-EXPOSE $SERVERPORT
+EXPOSE $SERVERPORT $HTTPSSERVERPORT $AJPSERVERPORT
 
 COPY entrypoint /entrypoint
 RUN chmod +x /entrypoint
