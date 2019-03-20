@@ -12,6 +12,8 @@ sed -i "s/PlaceholderAppHTTPPort/$SERVERPORT/g" $INSTALL/conf/server.xml
 sed -i "s/PlaceholderAppHTTPSPort/$HTTPSSERVERPORT/g" $INSTALL/conf/server.xml
 sed -i "s/PlaceholderAppAJPPort/$AJPSERVERPORT/g" $INSTALL/conf/server.xml
 
+sed -i '/^JAVA_HOME=/d' $INSTALL/bin/setenv.sh
+
 set +e
 if ! [ -z $PROXY ] ; then
 
