@@ -10,7 +10,7 @@ chown $_user $_workdir
 
 sed -i "s/PlaceholderAppHTTPPort/$SERVERPORT/g" $INSTALL/conf/server.xml
 sed -i "s/PlaceholderAppHTTPSPort/$HTTPSSERVERPORT/g" $INSTALL/conf/server.xml
-sed -i "s/PlaceholderAppAJPPort/$AJPPORT/g" $INSTALL/conf/server.xml
+sed -i "s/PlaceholderAppAJPPort/$AJPSERVERPORT/g" $INSTALL/conf/server.xml
 
 set +e
 if ! [ -z $PROXY ] ; then
