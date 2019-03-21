@@ -32,7 +32,7 @@ echo "portChoice=default">>response.varfile && \
 ./$JIRAVERSION -q -varfile response.varfile && \
 ln -n /usr/share/java/mysql-connector-java.jar $INSTALLDIR/lib/mysql-connector-java.jar
 
-COPY files/server.xml $INSTALLDIR/conf/server.xml
+#COPY files/server.xml $INSTALLDIR/conf/server.xml
 
 EXPOSE $SERVERPORT $HTTPSSERVERPORT $AJPSERVERPORT
 
