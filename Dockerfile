@@ -30,9 +30,12 @@ echo "executeLauncherAction$Boolean=true">>response.varfile && \
 echo "httpPort\$Long=$SERVERPORT">>response.varfile && \
 echo "portChoice=default">>response.varfile && \
 ./$JIRAVERSION -q -varfile response.varfile && \
-ln -n /usr/share/java/mysql-connector-java.jar $INSTALLDIR/lib/mysql-connector-java.jar
+ln -n /usr/share/java/mysql-connector-java.jar $INSTALLDIR/lib/mysql-connector-java.jar && \
+rm $JIRAVERSION
 
-#COPY files/server.xml $INSTALLDIR/conf/server.xml
+COPY files/server.xml $INSTALLDIR/conf/server.xml
+RUN mkdir -p  $INSTALLDIR/ext
+COPY files/rewrite.config $INSTALLDIR/ext/rewrite.config
 
 EXPOSE $SERVERPORT $HTTPSSERVERPORT $AJPSERVERPORT
 
