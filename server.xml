@@ -7,7 +7,7 @@
     <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"/>
 
     <Service name="Catalina">
-        <Connector port="PlaceholderAppHTTPPort" relaxedPathChars="[]|" relaxedQueryChars="[]|{}^&#x5c;&#x60;&quot;&lt;&gt;"
+        <Connector port="8080" relaxedPathChars="[]|" relaxedQueryChars="[]|{}^&#x5c;&#x60;&quot;&lt;&gt;"
                    maxThreads="150" minSpareThreads="25" connectionTimeout="20000" enableLookups="false"
                    maxHttpHeaderSize="8192" protocol="HTTP/1.1" useBodyEncodingForURI="true" redirectPort="8443"
                    acceptCount="100" disableUploadTimeout="true" bindOnInit="false"/>
