@@ -6,7 +6,7 @@ MAINTAINER Christian Walonka <cwalonka@it-economics.de>
 
 ARG INSTALLDIR=/opt/atlassian/jira
 ENV INSTALLDIR=${INSTALLDIR}
-ARG JIRAVERSION=atlassian-jira-software-7.13.1-x64.bin
+ARG JIRAVERSION=atlassian-jira-software-8.0.2-x64.bin
 ARG DOWNLOADPATH=http://www.atlassian.com/software/jira/downloads/binary
 ARG SERVERPORT=8080
 ENV SERVERPORT=${SERVERPORT}
