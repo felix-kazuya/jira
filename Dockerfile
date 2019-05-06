@@ -6,7 +6,7 @@ MAINTAINER Christian Walonka <cwalonka@it-economics.de>
 
 ARG INSTALLDIR=/opt/atlassian/jira
 ENV INSTALLDIR=${INSTALLDIR}
-ARG JIRAVERSION=atlassian-jira-software-7.13.1-x64.bin
+ARG JIRAVERSION=atlassian-jira-software-8.1.0-x64.bin
 ARG DOWNLOADPATH=http://www.atlassian.com/software/jira/downloads/binary
 ARG SERVERPORT=8080
 ENV SERVERPORT=${SERVERPORT}
@@ -15,7 +15,7 @@ ENV HTTPSSERVERPORT=${HTTPSSERVERPORT}
 ARG AJPSERVERPORT=9080
 ENV AJPSERVERPORT=${AJPSERVERPORT}
 
-ENV REFRESHED_AT 2019-03-04
+ENV REFRESHED_AT 2019-05-06
 RUN wget $DOWNLOADPATH/$JIRAVERSION && \
 chmod +x $JIRAVERSION && \
 touch response.varfile && \
